@@ -9,13 +9,11 @@ position: relative;
     padding: 0 5vw;
 }
 h2{
-    font-size: $h2-size;
     font-weight: bold;
     color: $color-white;
     margin-bottom: 1rem;
 }
 p{
-    font-size: $p-size;
     color: $color-pureWhite;
 }
 .landingButtons{
@@ -33,9 +31,12 @@ p{
     justify-content: flex-end;
 
     a{
+        font-size: $p-size;
         margin: 0 1rem 0 0;
         color: $color-pureWhite;
-        font-size: $p-size;
+        &:hover{
+            color: $color-red;
+        }
     }
     img {
         width: 50px;

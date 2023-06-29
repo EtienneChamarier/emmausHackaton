@@ -17,8 +17,22 @@ html {
 body {
   position: relative;
   font-family: $font-stack;
+  h1{
+    font-size: $h1-size;
+  }
+  h2{
+    font-size: $h2-size;
+  }
+  h3{
+    font-size: $h3-size;
+  }
+  h4{
+    font-size: $h4-size;
+  }
+  p{
+    font-size: $p-size;
+  }
 }
-
 .red {
   color: $color-red;
 }
@@ -28,7 +42,9 @@ body {
 .green {
   color: $color-green;
 }
-
+section{
+  padding-top: 8rem;
+}
 .buttonRed{
   padding: 2rem;
   border-radius: 100px;
