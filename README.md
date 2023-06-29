@@ -5,7 +5,7 @@
 Install the dependencies project with the command:
 
 ```bash
-npm run setup
+npm run setup 
 ```
 
 ### Set environment variables

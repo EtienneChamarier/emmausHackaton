@@ -21,7 +21,7 @@ USE `emmaus` ;
 -- Table `emmaus`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `emmaus`.`user` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `role` TINYINT NULL,
   `firstname` VARCHAR(45) NULL,
   `lastname` VARCHAR(45) NULL,
@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 -- Table `emmaus`.`phone`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `emmaus`.`phone` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `brand` VARCHAR(45) NULL,
   `modele` VARCHAR(45) NULL,
   `modele_exact` VARCHAR(45) NULL,
@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 -- Table `emmaus`.`stockphone`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `emmaus`.`stockphone` (
-  `idstockphone` INT NOT NULL,
+  `idstockphone` INT NOT NULL AUTO_INCREMENT,
   `price` DECIMAL(6,2) NULL,
   `location` VARCHAR(45) NULL,
   `date` DATETIME NULL,
