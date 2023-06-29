@@ -1,7 +1,5 @@
 # Workshop jwt : Express/React
 
-POUETRTTRT
-
 ### Install dependencies
 
 Install the dependencies project with the command:
