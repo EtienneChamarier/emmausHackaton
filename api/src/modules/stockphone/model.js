@@ -14,7 +14,10 @@ const findAll = () => {
 
 const findOne = (id) => {
   return db
-    .execute("select * from stockphone where id = ?", [id])
+    .execute(
+      "select * from stockphone left join phone on phone_id = phone.id where id = ?",
+      [id]
+    )
     .then(([data]) => {
       return data;
     })
