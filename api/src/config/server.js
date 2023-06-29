@@ -1,24 +1,14 @@
-// import express & global middlewares
-const express = require("express");
+const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const errorHandler = require("../middlewares/errorHandler");
-
-// import router
-const apiRouter = require("../modules");
-
-// Instanciate your app (http server)
 const app = express();
+const router = require('../modules/index');
 
-// apply global middlewares (!important: before any routes !)
-app.use(cors({ origin: "http://localhost:3000" }));
-app.use(helmet());
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(cors());
+app.use(helmet())
 
-// link router to your app
-app.use(apiRouter);
-
-// global error handler middleware
-app.use(errorHandler);
+app.use('/api', router);
 
 module.exports = app;
