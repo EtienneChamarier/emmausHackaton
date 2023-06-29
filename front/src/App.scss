@@ -1,0 +1,33 @@
+@font-face {
+  font-family: FiraSans-bold;
+  src: url(./fonts/Fira_Sans/FiraSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: FiraSans-medium;
+  src: url(./fonts/Fira_Sans/FiraSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: FiraSans-regular;
+  src: url(./fonts/Fira_Sans/FiraSans-Regular.ttf);
+}
+
+* {
+  margin: 0 auto;
+  padding: 2rem;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: #002743;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}

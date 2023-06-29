@@ -1,12 +1,16 @@
-.navbar {
-    display: flex;
-    align-items: center;
+@import "../../variables";
 
-    background: rebeccapurple;
-    color: white;
+.navbar {
+    background: $color-darkBlue;
     font-family: Helvetica;
+    display: flex;
     font-weight: 300;
     min-width: 100vw;
+
+
+    a {
+        color: $color-pureWhite;
+    }
 }
 
 .navbar__title {

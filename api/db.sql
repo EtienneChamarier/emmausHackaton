@@ -36,13 +36,12 @@ ENGINE = InnoDB;
 -- Table `emmaus`.`phone`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `emmaus`.`phone` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `brand` VARCHAR(45) NULL,
   `modele` VARCHAR(45) NULL,
   `modele_exact` VARCHAR(45) NULL,
   `storage` VARCHAR(45) NULL,
   `memory` VARCHAR(45) NULL,
-  `unlocked` VARCHAR(45) NULL,
   `color` VARCHAR(45) NULL,
   `year` VARCHAR(45) NULL,
   `replacement_value` INT NULL,
@@ -54,11 +53,12 @@ ENGINE = InnoDB;
 -- Table `emmaus`.`stockphone`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `emmaus`.`stockphone` (
-  `idstockphone` INT NOT NULL,
+  `idstockphone` INT NOT NULL AUTO_INCREMENT,
   `price` DECIMAL(6,2) NULL,
   `location` VARCHAR(45) NULL,
   `date` DATETIME NULL,
   `condition` VARCHAR(45) NULL,
+  `unlocked` VARCHAR(45) NULL,
   `accessories` VARCHAR(45) NULL,
   `phone_id` INT NOT NULL,
   `user_id` INT NOT NULL,
