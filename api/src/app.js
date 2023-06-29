@@ -1,10 +1,16 @@
-require("dotenv").config();
-const app = require("./config/server");
-const db = require("./config/database");
+require('dotenv').config();
+const app = require("./config/server.js"); 
+const port = process.env.PORT || 8000;
 
-db.getConnection().then(() => {
-    console.log("database successfully connected");
-    app.listen(process.env.APP_PORT, () => {
-        console.log(`server started at http://localhost:${process.env.APP_PORT}`);
-    });
+app.get("/", (req, res) => {
+    res.send("Welcome");
 });
+
+app.get("*", (req, res) => {
+  res.redirect("/")
+});
+
+app.listen(port, () => {
+});
+
+module.exports = app;
