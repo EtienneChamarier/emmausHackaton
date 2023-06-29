@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import { Donate } from "./pages/Donate";
 import Nav from "./components/Nav/Nav";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import "./App.scss";
 
 function App() {
