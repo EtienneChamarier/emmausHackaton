@@ -30,4 +30,35 @@ html {
 
 body {
   position: relative;
+  padding: 0%;
 }
+
+
+form#form1{
+  padding: 0%;
+}
+
+h1{
+  align-items: center;
+}
+
+
+ select {
+   margin-top: 5px;
+   text-align: center;
+   width: 80%;
+   height: 3px;
+   border-radius: 5px;
+   color: black;
+   border: none;
+   outline: none;
+ }
+
+ p{
+  text-align:left;
+ }
+
+ select.form-select{
+  border: solid;
+  
+ }
