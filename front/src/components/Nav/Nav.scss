@@ -1,26 +1,18 @@
 @import "../../variables";
 
 .navbar {
-    background: $color-darkBlue;
-    font-family: Helvetica;
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    background: $color-pureWhite;
     display: flex;
-    font-weight: 300;
-    min-width: 100vw;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.25));
 
-
-    a {
-        color: $color-pureWhite;
+    .navbarLink {
+        color: $color-darkBlue;
+        font-size: $a-size;
+        font-weight: bold;
     }
-}
-
-.navbar__title {
-    margin-right: auto;
-    font-size: 150%;
-    padding: 12px 16px;
-}
-
-.navbar__item {
-    padding: 16px 16px;
-    cursor: pointer;
-    vertical-align: middle;
 }
