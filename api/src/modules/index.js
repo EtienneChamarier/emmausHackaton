@@ -1,10 +1,6 @@
 const router = require("express").Router();
-const usersRouter = require("./users");
-const albumsRouter = require("./albums");
-const tracksRouter = require("./tracks");
+const phoneRouter = require("./phone");
 
-router.use("/users", usersRouter);
-router.use("/albums", albumsRouter);
-router.use("/tracks", tracksRouter);
+router.use("/phone", phoneRouter);
 
 module.exports = router;
