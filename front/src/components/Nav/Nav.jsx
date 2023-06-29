@@ -9,16 +9,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar__item">
-        <Link to="/albums">Albums</Link>
-      </div>
-      <div className="navbar__item">
-        <Link to="/tracks">Tracks</Link>
-      </div>
-      <div className="navbar__item">
-        <Link to="/users">Users</Link>
-      </div>
-
-      <div className="navbar__item">
+        <Link to="/donate">Faire un don</Link>
         <Link to="/login">Login</Link>
       </div>
     </header>
