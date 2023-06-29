@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { getAll, getOneUser, putOneUser, register,deleteUser, login, logout } = require("./controller")
 
 
-const  { hashPassword, isAdmin, authorization } = require('../../config/auth')
+const  { hashPassword, isAdmin, authorization } = require('../../middlewares/auth')
 
 router.get('/', authorization, isAdmin, getAll)
 router.get("/logout", authorization, logout)
