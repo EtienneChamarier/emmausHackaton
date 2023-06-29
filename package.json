@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Brian-boudrioux/workshop-js-fullstack-jwt#readme",
   "dependencies": {
     "concurrently": "^8.2.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "sass": "^1.63.6"
   }
 }

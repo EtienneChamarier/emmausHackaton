@@ -1,12 +1,15 @@
 .navbar {
     display: flex;
-    align-items: center;
-
-    background: rebeccapurple;
-    color: white;
+    background: #FFFFFF;
+    color: #002743;
     font-family: Helvetica;
     font-weight: 300;
     min-width: 100vw;
+
+
+    a {
+        color: #002743;
+    }
 }
 
 .navbar__title {
