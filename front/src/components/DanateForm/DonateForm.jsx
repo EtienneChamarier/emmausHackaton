@@ -30,7 +30,13 @@ export const DonateForm = () => {
           </div>
         </div>
         <div className="summary">
-          <DonateSummary data={[numberOfPhone, averageYear]} />
+          <h3>Résumé des informations</h3>
+          <DonateSummary
+            data={[
+              { name: "Quantité", value: numberOfPhone },
+              { name: "Ancienneté", value: averageYear },
+            ]}
+          />
         </div>{" "}
       </div>
     </>

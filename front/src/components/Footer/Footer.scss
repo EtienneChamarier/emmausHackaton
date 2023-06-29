@@ -6,6 +6,9 @@ footer{
     width: 100vw;
     background-color: $color-darkBlue;
     padding: 1.5rem;
+    padding-inline: 9rem;
+    display: flex;
+    justify-content: space-between;
     a{
         color: $color-pureWhite;
         font-size: $a-size;

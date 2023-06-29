@@ -1,4 +1,16 @@
 /* eslint-disable react/prop-types */
 export const DonateSummary = ({ data }) => {
-  return <>{data.map((e, index) => e > 0 && <h3 key={index}>{e}</h3>)}</>;
+  return (
+    <>
+      {data.map(
+        (e, index) =>
+          e.value > 0 && (
+            <div key={index}>
+              <p>{e.name}</p>
+              <p>{e.value}</p>
+            </div>
+          )
+      )}
+    </>
+  );
 };
