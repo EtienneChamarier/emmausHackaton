@@ -5,9 +5,10 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    // position: relative;
+
     .emergencyText{
-    color: $color-darkBlue;
+        color: $color-darkBlue;
+        margin-bottom: -8rem;
     h2{
         margin-bottom: 6rem;
     }
@@ -15,8 +16,7 @@
         padding: 0 17rem;
     }
 }
-img{z-index: -1;
-    margin-top: -25rem;
-    // position: absolute;
+img{
+    z-index: -1;
 }
 }
