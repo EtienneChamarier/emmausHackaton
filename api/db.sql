@@ -1,59 +1,83 @@
-CREATE DATABASE  IF NOT EXISTS `workshopjwt` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `workshopjwt`;
+-- MySQL Workbench Forward Engineering
 
-DROP TABLE IF EXISTS `users`;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` enum('ROLE_ADMIN','ROLE_USER') NOT NULL DEFAULT 'ROLE_USER',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema emmaus
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema emmaus
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `emmaus` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `emmaus` ;
+
+-- -----------------------------------------------------
+-- Table `emmaus`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `emmaus`.`user` (
+  `id` INT NOT NULL,
+  `role` TINYINT NULL,
+  `firstname` VARCHAR(45) NULL,
+  `lastname` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `location` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 
-DROP TABLE IF EXISTS `albums`;
+-- -----------------------------------------------------
+-- Table `emmaus`.`phone`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `emmaus`.`phone` (
+  `id` INT NOT NULL,
+  `brand` VARCHAR(45) NULL,
+  `modele` VARCHAR(45) NULL,
+  `modele_exact` VARCHAR(45) NULL,
+  `storage` VARCHAR(45) NULL,
+  `memory` VARCHAR(45) NULL,
+  `unlocked` VARCHAR(45) NULL,
+  `color` VARCHAR(45) NULL,
+  `year` VARCHAR(45) NULL,
+  `replacement_value` INT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
-CREATE TABLE albums (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  genre VARCHAR(255),
-  picture VARCHAR(255),
-  artist VARCHAR(255)
-);
+
+-- -----------------------------------------------------
+-- Table `emmaus`.`stockphone`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `emmaus`.`stockphone` (
+  `idstockphone` INT NOT NULL,
+  `price` DECIMAL(6,2) NULL,
+  `location` VARCHAR(45) NULL,
+  `date` DATETIME NULL,
+  `condition` VARCHAR(45) NULL,
+  `accessories` VARCHAR(45) NULL,
+  `phone_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`idstockphone`),
+  INDEX `fk_stockphone_phone1_idx` (`phone_id` ASC) VISIBLE,
+  INDEX `fk_stockphone_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_stockphone_phone1`
+    FOREIGN KEY (`phone_id`)
+    REFERENCES `emmaus`.`phone` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_stockphone_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `emmaus`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
-INSERT INTO albums
-  (title, genre, picture, artist)
-  VALUES
-  ('Nevermind', "Grunge", "swimming_baby.png", "Nirvana"),
-  ('Welcome to the cruel Worlg', "Rock", "smoking_man.png", "Ben Harper"),
-  ('By The Way', "Rock", "Standing_man.png", "RHCP");
-
-
-  DROP TABLE IF EXISTS `tracks`;
-
-CREATE TABLE tracks (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    youtube_url VARCHAR(255),
-    id_album INT NOT NULL,
-    CONSTRAINT `fk_albumsid`
-    FOREIGN KEY (`id_album`)
-    REFERENCES `workshopjwt`.`albums` (`id`)
-);
-
-INSERT INTO tracks
-  (id, title, youtube_url, id_album)
-  VALUES
-  (1, 'Smells Like Teen Spirit', 'https://smellsliketeenspirit.nirvana.com', 1),
-  (2, 'In Bloom', 'https://inbloom.nirvana.com', 1),
-  (3, 'Come As You Are', 'https://comeasyouare.nirvana.com', 1),
-  (4, 'The three of us', 'https://thethreeofus.benharper.com', 2),
-  (5, 'Whipping Boy', 'https://whippingboy.benharper.com', 2),
-  (6, 'Like a King', 'https://likeaking.benharper.com', 2),
-  (7, 'By The Way', 'https://bytheway.RHCP.com', 3),
-  (8, 'The zephyr song', 'https://thezephyrsong.RHCP.com', 3),
-  (9, 'Throw away your television', 'https://throwawayyourtelevision.RHCP.com', 3);
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
