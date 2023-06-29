@@ -1,14 +1,15 @@
+@import "../../variables";
+
 .navbar {
-    display: flex;
-    background: #FFFFFF;
-    color: #002743;
+    background: $color-darkBlue;
     font-family: Helvetica;
+    display: flex;
     font-weight: 300;
     min-width: 100vw;
 
 
     a {
-        color: #002743;
+        color: $color-pureWhite;
     }
 }
 
