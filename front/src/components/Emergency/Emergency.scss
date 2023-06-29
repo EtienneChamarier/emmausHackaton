@@ -1,0 +1,22 @@
+@import "../../variables";
+
+#emergency{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    // position: relative;
+    .emergencyText{
+    color: $color-darkBlue;
+    h2{
+        margin-bottom: 6rem;
+    }
+    p{
+        padding: 0 17rem;
+    }
+}
+img{z-index: -1;
+    margin-top: -25rem;
+    // position: absolute;
+}
+}

@@ -1,26 +1,12 @@
-@font-face {
-  font-family: FiraSans-bold;
-  src: url(./fonts/Fira_Sans/FiraSans-Bold.ttf);
-}
-
-@font-face {
-  font-family: FiraSans-medium;
-  src: url(./fonts/Fira_Sans/FiraSans-Medium.ttf);
-}
-
-@font-face {
-  font-family: FiraSans-regular;
-  src: url(./fonts/Fira_Sans/FiraSans-Regular.ttf);
-}
+@import "./variables";
 
 * {
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   border: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  color: #002743;
 }
 
 html {
@@ -30,4 +16,44 @@ html {
 
 body {
   position: relative;
+  font-family: $font-stack;
+  h1{
+    font-size: $h1-size;
+  }
+  h2{
+    font-size: $h2-size;
+  }
+  h3{
+    font-size: $h3-size;
+  }
+  h4{
+    font-size: $h4-size;
+  }
+  p{
+    font-size: $p-size;
+  }
+}
+.red {
+  color: $color-red;
+}
+.yellow {
+  color: $color-yellow;
+}
+.green {
+  color: $color-green;
+}
+section{
+  padding-top: 8rem;
+}
+.buttonRed{
+  padding: 2rem;
+  border-radius: 100px;
+  background-color: $color-red;
+  color: $color-pureWhite;
+  font-weight: bold;
+  font-size: $p-size;
+  width: 35rem;
+  &:hover{
+    filter: brightness(90%);
+  }
 }
