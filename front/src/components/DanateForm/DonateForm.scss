@@ -1,0 +1,65 @@
+@import "../../variables";
+
+.donatePage {
+  margin-top: 85px;
+  display: flex;
+  height: 100vh;
+  h3 {
+    color: $color-darkBlue;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 24px;
+    font-family: Fira Sans;
+    font-weight: 700;
+    text-align: center;
+    }
+ .form {    
+   
+    width: 60%;
+    height: 100%;
+
+  .content { 
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    h2 {
+    color: $color-red;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 32px;
+    font-family: Fira Sans;
+    font-weight: 700;
+  
+    }
+
+   
+    form {
+    display: flex;
+    flex-direction: column;
+      .selectInput {
+      color: $color-darkBlue;
+      font-size: 16px;
+      height: 32px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border: 1px $color-darkBlue solid;
+      border-radius: 5px;      
+      background-color: $color-grey;
+      }
+    }
+  }  
+
+
+  
+  }
+
+  .summary {
+    width: 40%;
+    height: 100%;
+    background-color: $color-grey;
+  }
+ 
+ 
+}
