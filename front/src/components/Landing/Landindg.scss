@@ -1,0 +1,44 @@
+@import "../../variables";
+
+#landing{
+height: 100vh;
+position: relative;
+.landingText{
+    position: absolute;
+    bottom: 22%;
+    padding: 0 5vw;
+}
+h2{
+    font-size: $h2-size;
+    font-weight: bold;
+    color: $color-white;
+    margin-bottom: 1rem;
+}
+p{
+    font-size: $p-size;
+    color: $color-pureWhite;
+}
+.landingButtons{
+    position: absolute;
+    bottom: 7%;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 0 5vw;
+}
+.usersSection{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a{
+        margin: 0 1rem 0 0;
+        color: $color-pureWhite;
+        font-size: $p-size;
+    }
+    img {
+        width: 50px;
+    }
+}
+}

@@ -1,27 +1,19 @@
-import "./Nav.scss";
 import { Link } from "react-router-dom";
+import "./Nav.scss";
+import Emmaus from "../../assets/icones/Emmaus_Logo.png";
 
 const Navbar = () => {
   return (
-    <header className="navbar">
-      <div className="navbar__title navbar__item">
-        <Link to="/">My panel</Link>
+    <nav className="navbar">
+      <a href="#landing">
+        <img src={Emmaus} alt="logo emmaus connect" />
+      </a>
+      <div className="navbarLink">
+        <Link to="/">Faire un don</Link>
+        <Link href="#impact">À propos</Link>
+        <Link to="/">F.A.Q </Link>
       </div>
-
-      <div className="navbar__item">
-        <Link to="/albums">Albums</Link>
-      </div>
-      <div className="navbar__item">
-        <Link to="/tracks">Tracks</Link>
-      </div>
-      <div className="navbar__item">
-        <Link to="/users">Users</Link>
-      </div>
-
-      <div className="navbar__item">
-        <Link to="/login">Login</Link>
-      </div>
-    </header>
+    </nav>
   );
 };
 

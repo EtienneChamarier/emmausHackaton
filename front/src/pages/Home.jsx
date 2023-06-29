@@ -1,10 +1,13 @@
-import Footer from "../components/Footer";
+import Landing from "../components/Landing/Landing";
+import Emergency from "../components/Emergency/Emergency";
+import Impact from "../components/Impact/Impact";
 
 function Home() {
     return (
         <>
-            <h1>Bonjour </h1>
-            <Footer/>
+        <Landing/>
+        <Emergency/>
+        <Impact/>
         </>
     )
 }

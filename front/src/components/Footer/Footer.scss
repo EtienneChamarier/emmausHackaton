@@ -1,0 +1,12 @@
+@import "../../variables";
+
+footer{
+    width: 100vw;
+    background-color: $color-darkBlue;
+    padding: 1.5rem;
+    a{
+        color: $color-pureWhite;
+        font-size: $a-size;
+        font-weight: bold;
+    }
+}
