@@ -1,10 +1,16 @@
-const router = require("express").Router();
-const userSchema = require("./validator");
-const validator = require("../../middlewares/validator");
-const { findAll, createUser, createFavTrack } = require("./controller");
+const router = require('express').Router();
 
-router.get("/", findAll);
-router.post('/', validator(userSchema), createUser);
-router.post('/:id/track/:idTrack', createFavTrack);
+const { getAll, getOneUser, putOneUser, register,deleteUser, login, logout } = require("./controller")
+
+
+const  { hashPassword, isAdmin, authorization } = require('../../middlewares/auth')
+
+router.get('/', authorization, isAdmin, getAll)
+router.get("/logout", authorization, logout)
+router.get('/:id', authorization, isAdmin, getOneUser )
+router.post('/register', hashPassword, register)
+router.post("/login", login)
+router.put('/:id', authorization, hashPassword, putOneUser)
+router.delete('/:id', authorization, isAdmin, deleteUser)
 
 module.exports = router;

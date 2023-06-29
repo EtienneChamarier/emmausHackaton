@@ -1,6 +1,12 @@
 const router = require("express").Router();
 
-const { getAllPhone, getPhone,addPhone, deletePhone, editPhone } = require("./controller");
+const {
+  getAllPhone,
+  getPhone,
+  addPhone,
+  deletePhone,
+  editPhone,
+} = require("./controller.js");
 
 router.get("/", getAllPhone);
 router.post("/", addPhone);

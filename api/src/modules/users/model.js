@@ -1,26 +1,72 @@
-const db = require("../../config/database");
+const db = require('../../config/database')
 
-const getAll = async () => {
-    const [users] = await db.query("SELECT id, username, email, role FROM users");
-    return users;
+const findAll = () => {
+    return db
+        .query('select * from user')
+        .then(([data]) => {
+            return data
+        })
+        .catch((err) => {
+            console.error('err', err)
+        })
 }
 
-const insertUser = async (user) => {
-    const { username, email, role, password } = user;
-    const [data] = await db.query(
-        "INSERT INTO users (username, email, role, password) VALUES (?, ?, ?, ?)", 
-        [username, email, role, password]
-    );
-    return data;
-};
-
-const getByEmail = async (email) => {
-    const [data] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
-    return data;
+const findByMail = (mail) => {
+    return db
+        .query("select * from user where email = ?", [mail])
+        .then(([data]) => {
+            return data;
+        })
+        .catch((err) =>{
+            console.error("Error ", err)
+            return err;
+        })
 }
 
-const addTrackToFav = async (idUser, idTrack) => {
-    return db.query("INSERT INTO user_tracks (id_user, id_track) VALUES (?,?)", [idUser, idTrack]);
+const modifyOneUser = (user, userId) => {
+    return db
+        .query('update user set ? where id = ?', [user, userId])
+        .then(([result])=>{
+            return result
+        })
+        .catch((err)=>{
+            console.error('err', err)
+        })
 }
 
-module.exports = { getAll, insertUser, getByEmail, addTrackToFav };
+const findOneUser = (id) => {
+    return db
+        .query('select * from user where id = ?', [id])
+        .then(([data]) => {
+            return data
+        })
+        .catch((err) => {
+            console.error('err', err)
+        })
+}
+
+
+const addUser = (user) => {
+    const { firstname , lastname, email, location, password} = user
+    return db 
+        .query("insert into user (firstname , lastname, email, location, password ) values (?, ?, ?, ?, ?)",
+        [firstname , lastname, email, location, password])
+        .then(([data]) => {
+            return { id: data.insertId, ...user}
+        }).catch((err) => {
+        console.error(err)
+            })
+       
+}
+
+
+const removeUser = (id) => {
+    return db
+        .execute("delete from user Where id = ? ",[id])
+        .then(([data]) => data )
+        .catch((err) => {
+        console.error(err)
+            })
+}
+
+module.exports = { findAll, findOneUser, addUser,removeUser, modifyOneUser, findByMail}
