@@ -13,10 +13,21 @@
   src: url(./fonts/Fira_Sans/FiraSans-Regular.ttf);
 }
 
-#root {
+* {
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-  display: flex;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
   color: #002743;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
