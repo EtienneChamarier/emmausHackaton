@@ -1,4 +1,4 @@
-const { findAll, findOne, createPhone, removePhone, modifyPhone } = require("../models/phoneModel"); 
+const { findAll, findOne, createPhone, removePhone, modifyPhone } = require("./model"); 
 
 
 const getAllPhone = async (req, res) => {
